@@ -1,2 +1,2 @@
 # Kindred
-A web application to build, share, and collaborate on family trees
+A web application to build, share, and collaborate on family trees 🌳
