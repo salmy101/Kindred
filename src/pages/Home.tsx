@@ -1,5 +1,4 @@
 // src/components/Home.jsx
-import "./home.css"
 
 function Home() {
     return(

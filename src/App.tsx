@@ -1,11 +1,14 @@
-import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from "./components/Home/Home";
-import Login from "./components/Login";
-import Dashboard from "./components/dashboard/Dashboard";
-import CreateTree from './components/contribute-tree/Create';
-import Profile from './components/profile/Profile'; 
-import Layout from './components/Layout';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import CreateTree from './pages/Create';
+import Profile from './pages/Profile'; 
+import Layout from './components/layout/Layout';
+import './styles/index.css';
+import './styles/layout.css';
+import './styles/components.css';
+
 
 
 function App() {

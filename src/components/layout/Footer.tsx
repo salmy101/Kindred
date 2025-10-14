@@ -1,5 +1,4 @@
 // src/components/Profile.jsx
-import "./footer.css"
 
 function Footer() {
     return(
