@@ -43,11 +43,11 @@ const NavBar = () => {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/login" className="nav-link">
                 Login
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/profile" className="nav-link">
                 Profile
@@ -68,8 +68,16 @@ const NavBar = () => {
 
         {/* Desktop Buttons */}
         <div className="nav-buttons-desktop">
-          <button className="btn btn-ghost">Sign In</button>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn btn-ghost">
+            <Link to="/login">
+              Login
+            </Link>
+          </button>
+          <button className="btn btn-primary">
+            <Link to="/register">
+              Register
+            </Link>
+          </button>
         </div>
 
         {/* Mobile Hamburger Menu */}
@@ -92,11 +100,11 @@ const NavBar = () => {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/login" className="nav-link" onClick={closeMenu}>
                 Login
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/profile" className="nav-link" onClick={closeMenu}>
                 Profile
@@ -115,10 +123,14 @@ const NavBar = () => {
           </ul>
           <div className="nav-buttons-mobile">
             <button className="btn btn-ghost" onClick={closeMenu}>
-              Sign In
+              <Link to="/login">
+                Login
+              </Link>
             </button>
             <button className="btn btn-primary" onClick={closeMenu}>
-              Get Started
+              <Link to="/register">
+                Register
+              </Link>
             </button>
           </div>
         </div>

@@ -13,7 +13,8 @@
 .login-page,
 .dashboard-page,
 .profile-page,
-.create-page {
+.create-page,
+.register-page {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -27,7 +28,8 @@
 .login-page h1,
 .dashboard-page h1,
 .profile-page h1,
-.create-page h1 {
+.create-page h1,
+.register-page h1 {
   margin: 0;
 }
 
