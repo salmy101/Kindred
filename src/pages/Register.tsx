@@ -1,10 +1,8 @@
-// src/pages/Login.jsx
 import { useState } from "react"
 import { supabase } from "../../src/helper/supabaseClient"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
-function Login () {
-    const navigate = useNavigate();
+function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("")
@@ -13,28 +11,25 @@ function Login () {
         event.preventDefault();
         setMessage("")
 
-        
-        const {data, error} = await supabase.auth.signInWithPassword({ //supabase auth method to login user w/ email and password
+        const {data, error} = await supabase.auth.signUp({ //supabase auth method to register user
             email: email,
-            password: password, //using the email and password stored in the state variables
+            password: password, //hashing and storing the password securely is handled by Supabase
         });
         if(error) {
             setMessage(error.message)
-            setEmail("")
-            setPassword("") 
             return;
         }
 
         if(data){
-            navigate("/dashboard"); //redirect to dashboard on successful login
-            return null;
+            setMessage("User account created")
         }
-
+        setEmail("")
+        setPassword("")
     }
 
   return (
     <div>
-        <h2>Login</h2>
+        <h2>Register</h2>
         <br></br>
         {message && <span>{message}</span>} {/* ternary operator to display message, if we have one and it exists, display in span tag */}
         <form onSubmit={handleSubmit}>
@@ -52,13 +47,14 @@ function Login () {
                 placeholder="Password"
                 required
             />
-            <button className="btn btn-ghost"type="submit">Login</button>
+            <button className="btn btn-ghost"type="submit">Register</button>
         </form>
         <span className="redirect-link mt-6">
-            Don't have an account? <Link to="/register">Register Here</Link>
+            Already have an account? <Link to="/login">Login Here</Link>
         </span>
     </div>
      
   )
 }
-export default Login;
+
+export default Register

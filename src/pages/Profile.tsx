@@ -1,4 +1,4 @@
-// src/components/Profile.jsx
+// src/pages/Profile.jsx
 
 function Profile() {
     return(

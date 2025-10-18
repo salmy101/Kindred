@@ -1,4 +1,4 @@
-// src/components/Create.jsx
+// src/pages/Create.jsx
 
 function Create() {
     return(

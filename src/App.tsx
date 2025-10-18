@@ -1,14 +1,19 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import CreateTree from './pages/Create';
 import Profile from './pages/Profile'; 
+import Register from './pages/Register';
+import Wrapper from './pages/Wrapper';
+
 import Layout from './components/layout/Layout';
+
+
 import './styles/index.css';
 import './styles/layout.css';
 import './styles/components.css';
-
 
 
 function App() {
@@ -18,9 +23,10 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="login" element={<Login/>} />
-        <Route path="dashboard" element={<Dashboard/>} />
-        <Route path="create" element={<CreateTree/>} />
-        <Route path="profile" element={<Profile/>} />
+        <Route path="register" element={<Register/>} />
+        <Route path="dashboard" element={<Wrapper><Dashboard/></Wrapper>} />
+        <Route path="create" element={<Wrapper><CreateTree/></Wrapper>} />
+        <Route path="profile" element={<Wrapper><Profile/></Wrapper>} />
         </Route>
       </Routes>
     </Router>
